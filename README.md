@@ -10,8 +10,3 @@ Logistic regressions are classification techniques that are commonly seen in:
 * text classification
 * components of neural networks 
 
-Advantages of Logistical Regression
-* more stuff ehre
-
-Disadvantages:
-* a little bit outdated
