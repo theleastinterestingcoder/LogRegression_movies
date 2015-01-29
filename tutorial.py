@@ -85,8 +85,6 @@ log_class = linear_model.LogisticRegression(C=reg_guess, penalty='l2', tol=1e-6)
 log_class.fit(x_train, y_train)
 
 
-
-
 # (4) Now that we have our classifier, let's get its accuracy
 correct = 0
 for (x,y) in zip(x_test, y_test):
