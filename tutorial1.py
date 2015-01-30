@@ -27,6 +27,11 @@ def stem_tokens(tokens, stemmer):
 def convert_to_vector(review, feature_space, feature_space_index):
     ans = np.zeros(len(feature_space_index))
 
+    review = review.replace(",", "")
+    review = review.replace(".", "")
+    review = review.replace("!", "")
+    review = review.replace("?", "")
+
     stemmed = stem_tokens(review.split(), stemmer)
     for w in stemmed:
         if w in feature_space:
@@ -61,7 +66,14 @@ bigramdist = Counter()
 # (1) Determine what our feature space will look like
 for page in raw_data: 
     for review in page['reviews']:
-        stemmed = stem_tokens(review[1].split(), stemmer)
+
+        review = review[1]
+        review = review.replace(",", "")
+        review = review.replace(".", "")
+        review = review.replace("!", "")
+        review = review.replace("?", "")
+
+        stemmed = stem_tokens(review.split(), stemmer)
         tmp = Counter(stemmed)  
         fdist.update(tmp)
         bigrams = [];
